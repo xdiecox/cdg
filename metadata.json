@@ -1,0 +1,6 @@
+{
+  "name": "Human Gravity",
+  "description": "Visualize human center of gravity and modify postures in 3D",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
