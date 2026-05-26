@@ -54,7 +54,7 @@ export const Controls: React.FC<ControlsProps> = ({ title, side, joints, posture
   const sideClass = side === "left" ? "left-6" : "right-6";
 
   return (
-    <div className={`absolute ${sideClass} top-6 bottom-6 w-72 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-zinc-800 p-4 flex flex-col gap-2.5 overflow-y-auto scrollbar-hide z-10 shadow-2xl`}>
+    <div className={`absolute ${sideClass} top-4 bottom-4 w-72 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-zinc-800 p-4 flex flex-col gap-2.5 overflow-y-auto scrollbar-hide z-10 shadow-2xl`}>
       <div className="flex items-center gap-2 border-b border-zinc-800 pb-1.5">
         <Settings2 className="w-4 h-4 text-blue-400" />
         <h2 className="font-semibold text-xs uppercase tracking-wider">{title}</h2>
