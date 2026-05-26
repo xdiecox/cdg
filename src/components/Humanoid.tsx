@@ -78,10 +78,14 @@ export const Humanoid: React.FC<HumanoidProps> = ({ posture, onCoGUpdate }) => {
   const colors = {
     torso: "#3b82f6",
     head: "#ef4444",
-    rightArm: "#facc15",
-    leftArm: "#f97316",
-    rightLeg: "#ec4899",
-    leftLeg: "#8b5cf6",
+  };
+
+  const jointColors = {
+    shoulder: "#facc15", // Hombros = Amarillo
+    elbow: "#d946ef",    // Codos = Fucsia
+    hip: "#ef4444",      // Cadera = Rojo
+    knee: "#22c55e",     // Rodillas = Verde
+    ankle: "#f472b6",    // Tobillos = Rosado
   };
 
   const calculateGroundingOffset = () => {
@@ -174,19 +178,19 @@ export const Humanoid: React.FC<HumanoidProps> = ({ posture, onCoGUpdate }) => {
               </group>
             </group>
 
-            {/* Right Arm (Screen Left) - Yellow */}
+            {/* Right Arm (Screen Left) - Yellow/Orange */}
             <group position={[-0.25, 0.6, 0]} rotation={[posture.rightShoulder.x, posture.rightShoulder.y, posture.rightShoulder.z]}>
-              <Joint color={colors.rightArm} />
-              <Bone name="rUpperArm" length={0.4} color={colors.rightArm} />
+              <Joint color={jointColors.shoulder} />
+              <Bone name="rUpperArm" length={0.4} color={jointColors.shoulder} />
               
               <group position={[0, -0.4, 0]} rotation={[posture.rightElbow.x, posture.rightElbow.y, posture.rightElbow.z]}>
-                <Joint color={colors.rightArm} />
-                <Bone name="rLowerArm" length={0.4} color={colors.rightArm} />
+                <Joint color={jointColors.elbow} />
+                <Bone name="rLowerArm" length={0.4} color={jointColors.elbow} />
                 <group position={[0, -0.4, 0]}>
                   <group position={[0, -0.05, 0]}>
                     <mesh ref={registerSegment("rHand")}>
                       <sphereGeometry args={[0.045, 8, 8]} />
-                      <meshStandardMaterial color={colors.rightArm} emissive={colors.rightArm} emissiveIntensity={0.3} transparent opacity={0.6} />
+                      <meshStandardMaterial color={jointColors.elbow} emissive={jointColors.elbow} emissiveIntensity={0.3} transparent opacity={0.6} />
                     </mesh>
                     <mesh position={[0, 0, -0.045]}>
                       <sphereGeometry args={[0.015, 8, 8]} />
@@ -197,19 +201,19 @@ export const Humanoid: React.FC<HumanoidProps> = ({ posture, onCoGUpdate }) => {
               </group>
             </group>
 
-            {/* Left Arm (Screen Right) - Orange */}
+            {/* Left Arm (Screen Right) - Yellow/Orange */}
             <group position={[0.25, 0.6, 0]} rotation={[posture.leftShoulder.x, posture.leftShoulder.y, posture.leftShoulder.z]}>
-              <Joint color={colors.leftArm} />
-              <Bone name="lUpperArm" length={0.4} color={colors.leftArm} />
+              <Joint color={jointColors.shoulder} />
+              <Bone name="lUpperArm" length={0.4} color={jointColors.shoulder} />
               
               <group position={[0, -0.4, 0]} rotation={[posture.leftElbow.x, posture.leftElbow.y, posture.leftElbow.z]}>
-                <Joint color={colors.leftArm} />
-                <Bone name="lLowerArm" length={0.4} color={colors.leftArm} />
+                <Joint color={jointColors.elbow} />
+                <Bone name="lLowerArm" length={0.4} color={jointColors.elbow} />
                 <group position={[0, -0.4, 0]}>
                   <group position={[0, -0.05, 0]}>
                     <mesh ref={registerSegment("lHand")}>
                       <sphereGeometry args={[0.045, 8, 8]} />
-                      <meshStandardMaterial color={colors.leftArm} emissive={colors.leftArm} emissiveIntensity={0.3} transparent opacity={0.6} />
+                      <meshStandardMaterial color={jointColors.elbow} emissive={jointColors.elbow} emissiveIntensity={0.3} transparent opacity={0.6} />
                     </mesh>
                     <mesh position={[0, 0, -0.045]}>
                       <sphereGeometry args={[0.015, 8, 8]} />
@@ -221,40 +225,40 @@ export const Humanoid: React.FC<HumanoidProps> = ({ posture, onCoGUpdate }) => {
             </group>
           </group>
 
-          {/* Right Leg (Screen Left) - Pink */}
+          {/* Right Leg (Screen Left) - Red/Green/Fuchsia */}
           <group position={[-0.15, -0.3, 0]} rotation={[posture.rightHip.x + posture.squat * 1.4, posture.rightHip.y, posture.rightHip.z]}>
-            <Joint color={colors.rightLeg} />
-            <Bone name="rUpperLeg" length={0.5} color={colors.rightLeg} />
+            <Joint color={jointColors.hip} />
+            <Bone name="rUpperLeg" length={0.5} color={jointColors.hip} />
             
             <group position={[0, -0.5, 0]} rotation={[posture.rightKnee.x + posture.squat * 2.4 - kLean, posture.rightKnee.y, posture.rightKnee.z]}>
-              <Joint color={colors.rightLeg} />
-              <Bone name="rLowerLeg" length={0.5} color={colors.rightLeg} />
+              <Joint color={jointColors.knee} />
+              <Bone name="rLowerLeg" length={0.5} color={jointColors.knee} />
               
               <group position={[0, -0.5, 0]} rotation={[posture.rightAnkle.x - posture.squat * 0.5 - aLean, posture.rightAnkle.y, posture.rightAnkle.z]}>
-                <Joint color={colors.rightLeg} />
+                <Joint color={jointColors.ankle} />
                 <mesh ref={registerSegment("rFoot")} position={[0, -0.02, 0.05]}>
                   <boxGeometry args={[0.1, 0.02, 0.18]} />
-                  <meshStandardMaterial color={colors.rightLeg} emissive={colors.rightLeg} emissiveIntensity={0.5} />
+                  <meshStandardMaterial color={jointColors.ankle} emissive={jointColors.ankle} emissiveIntensity={0.5} />
                 </mesh>
                  {/* No heel point */}
                </group>
             </group>
           </group>
 
-          {/* Left Leg (Screen Right) - Purple */}
+          {/* Left Leg (Screen Right) - Red/Green/Fuchsia */}
           <group position={[0.15, -0.3, 0]} rotation={[posture.leftHip.x + posture.squat * 1.4, posture.leftHip.y, posture.leftHip.z]}>
-            <Joint color={colors.leftLeg} />
-            <Bone name="lUpperLeg" length={0.5} color={colors.leftLeg} />
+            <Joint color={jointColors.hip} />
+            <Bone name="lUpperLeg" length={0.5} color={jointColors.hip} />
             
             <group position={[0, -0.5, 0]} rotation={[posture.leftKnee.x + posture.squat * 2.4 - kLean, posture.leftKnee.y, posture.leftKnee.z]}>
-              <Joint color={colors.leftLeg} />
-              <Bone name="lLowerLeg" length={0.5} color={colors.leftLeg} />
+              <Joint color={jointColors.knee} />
+              <Bone name="lLowerLeg" length={0.5} color={jointColors.knee} />
               
               <group position={[0, -0.5, 0]} rotation={[posture.leftAnkle.x - posture.squat * 0.5 - aLean, posture.leftAnkle.y, posture.leftAnkle.z]}>
-                <Joint color={colors.leftLeg} />
+                <Joint color={jointColors.ankle} />
                 <mesh ref={registerSegment("lFoot")} position={[0, -0.02, 0.05]}>
                   <boxGeometry args={[0.1, 0.02, 0.18]} />
-                  <meshStandardMaterial color={colors.leftLeg} emissive={colors.leftLeg} emissiveIntensity={0.5} />
+                  <meshStandardMaterial color={jointColors.ankle} emissive={jointColors.ankle} emissiveIntensity={0.5} />
                 </mesh>
                 {/* No heel point */}
                 </group>

@@ -44,23 +44,23 @@ export default function App() {
   };
 
   const leftJoints: JointConfig[] = useMemo(() => [
-    { id: "rightShoulder", label: "Hombro Der. (Frente/Atrás)", axis: "x", min: -3.1416, max: 1.57, color: "#fef08a" },
-    { id: "rightShoulder", label: "Hombro Der. (Lateral)", axis: "z", min: -3.14, max: 3.14, color: "#fef08a" },
-    { id: "rightElbow", label: "Codo Derecho", axis: "x", min: -2.0, max: 0, color: "#fef08a" },
-    { id: "rightHip", label: "Cadera Der. (Frente/Atrás)", axis: "x", min: -1.57, max: 1.57, color: "#f472b6" },
-    { id: "rightHip", label: "Cadera Der. (Lateral)", axis: "z", min: -1.57, max: 1.57, color: "#f472b6" },
-    { id: "rightKnee", label: "Rodilla Derecha", axis: "x", min: -3.1416, max: 3.1416, color: "#f472b6" },
+    { id: "rightShoulder", label: "Hombro Der. (Frente/Atrás)", axis: "x", min: -3.1416, max: 1.57, color: "#facc15" },
+    { id: "rightShoulder", label: "Hombro Der. (Lateral)", axis: "z", min: -3.14, max: 3.14, color: "#facc15" },
+    { id: "rightElbow", label: "Codo Derecho", axis: "x", min: -2.0, max: 0, color: "#d946ef" },
+    { id: "rightHip", label: "Cadera Der. (Frente/Atrás)", axis: "x", min: -1.57, max: 1.57, color: "#ef4444" },
+    { id: "rightHip", label: "Cadera Der. (Lateral)", axis: "z", min: -1.57, max: 1.57, color: "#ef4444" },
+    { id: "rightKnee", label: "Rodilla Derecha", axis: "x", min: -3.1416, max: 3.1416, color: "#22c55e" },
     { id: "rightAnkle", label: "Tobillo Derecho", axis: "x", min: -0.5, max: 0.5, color: "#f472b6" },
   ], []);
 
   const rightJoints: JointConfig[] = useMemo(() => [
-    { id: "leftShoulder", label: "Hombro Izq. (Frente/Atrás)", axis: "x", min: -3.1416, max: 1.57, color: "#fb923c" },
-    { id: "leftShoulder", label: "Hombro Izq. (Lateral)", axis: "z", min: -3.14, max: 3.14, color: "#fb923c" },
-    { id: "leftElbow", label: "Codo Izquierdo", axis: "x", min: -2.0, max: 0, color: "#fb923c" },
-    { id: "leftHip", label: "Cadera Izq. (Frente/Atrás)", axis: "x", min: -1.57, max: 1.57, color: "#a78bfa" },
-    { id: "leftHip", label: "Cadera Izq. (Lateral)", axis: "z", min: -1.57, max: 1.57, color: "#a78bfa" },
-    { id: "leftKnee", label: "Rodilla Izquierda", axis: "x", min: 0, max: 2.5, color: "#a78bfa" },
-    { id: "leftAnkle", label: "Tobillo Izquierdo", axis: "x", min: -0.5, max: 0.5, color: "#a78bfa" },
+    { id: "leftShoulder", label: "Hombro Izq. (Frente/Atrás)", axis: "x", min: -3.1416, max: 1.57, color: "#facc15" },
+    { id: "leftShoulder", label: "Hombro Izq. (Lateral)", axis: "z", min: -3.14, max: 3.14, color: "#facc15" },
+    { id: "leftElbow", label: "Codo Izquierdo", axis: "x", min: -2.0, max: 0, color: "#d946ef" },
+    { id: "leftHip", label: "Cadera Izq. (Frente/Atrás)", axis: "x", min: -1.57, max: 1.57, color: "#ef4444" },
+    { id: "leftHip", label: "Cadera Izq. (Lateral)", axis: "z", min: -1.57, max: 1.57, color: "#ef4444" },
+    { id: "leftKnee", label: "Rodilla Izquierda", axis: "x", min: 0, max: 2.5, color: "#22c55e" },
+    { id: "leftAnkle", label: "Tobillo Izquierdo", axis: "x", min: -0.5, max: 0.5, color: "#f472b6" },
   ], []);
 
   return (

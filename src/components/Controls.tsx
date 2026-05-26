@@ -54,19 +54,19 @@ export const Controls: React.FC<ControlsProps> = ({ title, side, joints, posture
   const sideClass = side === "left" ? "left-6" : "right-6";
 
   return (
-    <div className={`absolute ${sideClass} top-6 bottom-6 w-72 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-zinc-800 p-5 flex flex-col gap-3 overflow-y-auto scrollbar-hide z-10 shadow-2xl`}>
-      <div className="flex items-center gap-2 border-b border-zinc-800 pb-2">
+    <div className={`absolute ${sideClass} top-6 bottom-6 w-72 bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-zinc-800 p-4 flex flex-col gap-2.5 overflow-y-auto scrollbar-hide z-10 shadow-2xl`}>
+      <div className="flex items-center gap-2 border-b border-zinc-800 pb-1.5">
         <Settings2 className="w-4 h-4 text-blue-400" />
-        <h2 className="font-semibold text-sm uppercase tracking-wider">{title}</h2>
+        <h2 className="font-semibold text-xs uppercase tracking-wider">{title}</h2>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-2.5">
         {joints.map((joint) => (
-          <div key={`${joint.id}-${joint.axis}`} className="space-y-1.5">
+          <div key={`${joint.id}-${joint.axis}`} className="space-y-0.5">
             <div className="flex justify-between items-center group/item">
               <div className="flex items-center gap-1.5">
                 <label 
-                  className="text-[11px] font-medium transition-colors"
+                  className="text-[10px] font-medium transition-colors"
                   style={{ color: joint.color || "#a1a1aa" }}
                 >
                   {joint.label}
@@ -79,7 +79,7 @@ export const Controls: React.FC<ControlsProps> = ({ title, side, joints, posture
                   <RotateCcw className="w-2.5 h-2.5" />
                 </button>
               </div>
-              <span className="text-[9px] font-mono text-zinc-500 bg-zinc-800 px-1.5 py-0.5 rounded">
+              <span className="text-[8px] font-mono text-zinc-500 bg-zinc-800 px-1 py-0.5 rounded">
                 {typeof posture[joint.id] === "object" ? ((posture[joint.id] as JointRotation)[joint.axis] * (180/Math.PI)).toFixed(1) : "0.0"}°
               </span>
             </div>
@@ -98,7 +98,7 @@ export const Controls: React.FC<ControlsProps> = ({ title, side, joints, posture
       </div>
       
       {children && (
-        <div className="mt-2 pt-4 border-t border-zinc-800 space-y-4">
+        <div className="mt-1 pt-3 border-t border-zinc-800 space-y-3">
           {children}
         </div>
       )}
