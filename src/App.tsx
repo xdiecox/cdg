@@ -241,7 +241,7 @@ export default function App() {
                     <RotateCcw className="w-2.5 h-2.5" />
                   </button>
                 </div>
-                <span className="text-[10px] font-mono" style={{ color: "#60a5fa" }}>{(posture.hipLean * (180/Math.PI)).toFixed(1)}°</span>
+                <span className="text-[10px] font-mono" style={{ color: "#ef4444" }}>{(posture.hipLean * (180/Math.PI)).toFixed(1)}°</span>
               </div>
               <input
                 type="range"
@@ -251,7 +251,7 @@ export default function App() {
                 value={posture.hipLean}
                 onChange={(e) => setPosture({ ...posture, hipLean: parseFloat(e.target.value) })}
                 className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer transition-all outline-none"
-                style={{ accentColor: "#60a5fa" } as React.CSSProperties}
+                style={{ accentColor: "#ef4444" } as React.CSSProperties}
               />
             </div>
 
@@ -269,7 +269,7 @@ export default function App() {
                     <RotateCcw className="w-2.5 h-2.5" />
                   </button>
                 </div>
-                <span className="text-[10px] font-mono" style={{ color: "#f59e0b" }}>{(posture.kneeLean * (180/Math.PI)).toFixed(1)}°</span>
+                <span className="text-[10px] font-mono" style={{ color: "#22c55e" }}>{(posture.kneeLean * (180/Math.PI)).toFixed(1)}°</span>
               </div>
               <input
                 type="range"
@@ -279,7 +279,7 @@ export default function App() {
                 value={posture.kneeLean}
                 onChange={(e) => setPosture({ ...posture, kneeLean: parseFloat(e.target.value) })}
                 className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer transition-all outline-none"
-                style={{ accentColor: "#f59e0b" } as React.CSSProperties}
+                style={{ accentColor: "#22c55e" } as React.CSSProperties}
               />
             </div>
 
@@ -297,7 +297,7 @@ export default function App() {
                     <RotateCcw className="w-2.5 h-2.5" />
                   </button>
                 </div>
-                <span className="text-[10px] font-mono" style={{ color: "#a855f7" }}>{(posture.ankleLean * (180/Math.PI)).toFixed(1)}°</span>
+                <span className="text-[10px] font-mono" style={{ color: "#f472b6" }}>{(posture.ankleLean * (180/Math.PI)).toFixed(1)}°</span>
               </div>
               <input
                 type="range"
@@ -307,7 +307,7 @@ export default function App() {
                 value={posture.ankleLean}
                 onChange={(e) => setPosture({ ...posture, ankleLean: parseFloat(e.target.value) })}
                 className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer transition-all outline-none"
-                style={{ accentColor: "#a855f7" } as React.CSSProperties}
+                style={{ accentColor: "#f472b6" } as React.CSSProperties}
               />
             </div>
           </div>
